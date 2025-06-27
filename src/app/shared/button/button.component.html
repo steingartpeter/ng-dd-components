@@ -1,8 +1,34 @@
-<button>
+<!-- <button>
     <span>
       {{title()}}
     </span>
     <span class="icon">
       {{icon()}}
     </span>
-  </button>
+  </button> -->
+<!-- ========================================================================== -->
+<!-- Extendig standard elements instead of replacing them with cutom ones... -->
+<!-- 
+    use attribute selectore instead the accustomer "app-...":
+    @Component({
+        selector:'app-button'
+        ...
+    })    
+    ==> ==>
+    @Component({
+        selector:'[button]'
+        ...
+    })
+    ==> ==>
+    @Component({
+        selector:'button[appButon]'
+        ...
+    })
+-->
+<!-- ========================================================================== -->
+<span>
+    {{title()}}
+  </span>
+  <span class="icon">
+    {{icon()}}
+  </span>
