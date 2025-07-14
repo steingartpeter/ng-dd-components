@@ -8,6 +8,6 @@ import { Component, input, Input } from '@angular/core';
   styleUrl: './control.component.css'
 })
 export class ControlComponent {
-  @Input({required:true}) title='';
+  //@Input({required:true}) title='';
   label = input.required<string>();
 }
