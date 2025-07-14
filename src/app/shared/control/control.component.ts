@@ -7,6 +7,7 @@ import { Component, input, Input, ViewEncapsulation } from '@angular/core';
   templateUrl: './control.component.html',
   styleUrl: './control.component.css',
   encapsulation:ViewEncapsulation.None, // Disable encapsulation to extend css class
+  host:{class:'control'},
 })
 export class ControlComponent {
   //@Input({required:true}) title='';
