@@ -1,7 +1,9 @@
 import {
   Component,
+  ElementRef,
   HostBinding,
   HostListener,
+  inject,
   input,
   Input,
   ViewEncapsulation,
@@ -21,9 +23,14 @@ import {
 export class ControlComponent {
   // @Input({required:true}) title='';
   // @HostBinding('class') className = 'control';
-  @HostListener('click') onCLick(){/*Same placeholder*/}; 
+  // @HostListener('click') onCLick(){/*Same placeholder*/}; 
   label = input.required<string>();
+  
+  // Programatic access to HOST element...
+  private el = inject(ElementRef);
+  
   OnClickFncIncmoponent_class() {
     // Just a placeholder
+    console.log(this.el);
   }
 }
