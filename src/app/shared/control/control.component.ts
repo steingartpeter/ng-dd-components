@@ -1,4 +1,5 @@
 import {
+  AfterContentInit,
   Component,
   contentChild,
   ContentChild,
@@ -22,7 +23,7 @@ import {
   // class<== possibly replaced by @HostBinding - not recommended b.c.
   // click <== possibly replaced by @HostListener - same - officially not recommended
 })
-export class ControlComponent {
+export class ControlComponent implements AfterContentInit{
   // @Input({required:true}) title='';
   // @HostBinding('class') className = 'control';
   // @HostListener('click') onCLick(){/*Same placeholder*/}; 
@@ -37,5 +38,8 @@ export class ControlComponent {
     // Just a placeholder
     console.log(this.el);
     console.log(this.control());
+  }
+  ngAfterContentInit(): void {
+    console.log(this.control()?.nativeElement);
   }
 }
