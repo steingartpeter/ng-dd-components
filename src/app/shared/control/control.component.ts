@@ -1,5 +1,7 @@
 import {
   Component,
+  contentChild,
+  ContentChild,
   ElementRef,
   HostBinding,
   HostListener,
@@ -28,9 +30,12 @@ export class ControlComponent {
   
   // Programatic access to HOST element...
   private el = inject(ElementRef);
+  // @ContentChild('input') private control?:ElementRef<HTMLInputElement | HTMLTextAreaElement>
+  private control = contentChild<ElementRef<HTMLInputElement|HTMLTextAreaElement>>('input');
   
   OnClickFncIncmoponent_class() {
     // Just a placeholder
     console.log(this.el);
+    console.log(this.control());
   }
 }
