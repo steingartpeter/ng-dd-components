@@ -19,13 +19,13 @@ import { ControlComponent } from '../../../shared/control/control.component';
   styleUrl: './new-ticket.component.css',
 })
 export class NewTicketComponent implements AfterViewInit, OnInit {
-  @ViewChild('form') private form?:ElementRef<HTMLFormElement>;
+  @ViewChild('form') private form?: ElementRef<HTMLFormElement>;
   // private form = viewChild.required<ElementRef<HTMLFormElement>>('form');
   //private form = viewChild<ElementRef<HTMLFormElement>>('form');
 
   onSubmit(ttl: string, ticketText: string) {
-    console.log(`ttl: ${ttl}`);
-    console.log(`ticketText:${ticketText}`);
+    // console.log(`ttl: ${ttl}`);
+    // console.log(`ticketText:${ticketText}`);
     this.form?.nativeElement.reset();
     // this.form().nativeElement.reset();
     // this.form()?.nativeElement.reset();
@@ -33,12 +33,12 @@ export class NewTicketComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit(): void {
     //throw new Error('Method not implemented.');
-    console.log('ngAfterViewInit runs now ...');
-    console.log(this.form?.nativeElement);
+    // console.log('ngAfterViewInit runs now ...');
+    // console.log(this.form?.nativeElement);
   }
 
   ngOnInit(): void {
-    console.log('ON INIT runs now...');
-    console.log(this.form?.nativeElement);
+    // console.log('ON INIT runs now...');
+    // console.log(this.form?.nativeElement);
   }
 }

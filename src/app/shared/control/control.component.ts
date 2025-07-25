@@ -23,23 +23,24 @@ import {
   // class<== possibly replaced by @HostBinding - not recommended b.c.
   // click <== possibly replaced by @HostListener - same - officially not recommended
 })
-export class ControlComponent implements AfterContentInit{
+export class ControlComponent implements AfterContentInit {
   // @Input({required:true}) title='';
   // @HostBinding('class') className = 'control';
-  // @HostListener('click') onCLick(){/*Same placeholder*/}; 
+  // @HostListener('click') onCLick(){/*Same placeholder*/};
   label = input.required<string>();
-  
+
   // Programatic access to HOST element...
   private el = inject(ElementRef);
   // @ContentChild('input') private control?:ElementRef<HTMLInputElement | HTMLTextAreaElement>
-  private control = contentChild<ElementRef<HTMLInputElement|HTMLTextAreaElement>>('input');
-  
+  private control =
+    contentChild<ElementRef<HTMLInputElement | HTMLTextAreaElement>>('input');
+
   OnClickFncIncmoponent_class() {
     // Just a placeholder
-    console.log(this.el);
-    console.log(this.control());
+    // console.log(this.el);
+    // console.log(this.control());
   }
   ngAfterContentInit(): void {
-    console.log(this.control()?.nativeElement);
+    //console.log(this.control()?.nativeElement);
   }
 }
