@@ -11,6 +11,9 @@ import { TicketComponent } from "./ticket/ticket.component";
   styleUrl: './tickets.component.css',
 })
 export class TicketsComponent {
+  // onCloseTicket(arg0: string) {
+  // throw new Error('Method not implemented.');
+  // }
   tickets: Ticket[] = [];
 
   onAdd(ticketData: { title: string; text: string }) {
@@ -21,5 +24,15 @@ export class TicketsComponent {
       status: 'open',
     };
     this.tickets.push(ticket);
+  }
+
+  onClose(id: string){
+    this.tickets = this.tickets.map((tckt) => {
+      if(tckt.id === id){
+        //tckt.status = 'closed';
+        return {...tckt, status:'closed'};
+      }
+      return tckt;
+    })
   }
 }
