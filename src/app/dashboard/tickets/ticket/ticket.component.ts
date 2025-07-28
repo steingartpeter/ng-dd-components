@@ -9,6 +9,10 @@ import { Ticket } from '../ticket.model';
   styleUrl: './ticket.component.css'
 })
 export class TicketComponent {
+  // Input configuration options:
+  // data = input.required<Ticket>({alias:''});
+  // data = input.required<Ticket>({transform:(value )=>{ return TransformedVlaue;}});
+  // For output() => tehre is only one possiblity 'alias'
   data = input.required<Ticket>();
   detailsVisible = signal(false);
   close = output();
